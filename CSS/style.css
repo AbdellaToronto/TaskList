@@ -2,7 +2,12 @@
 body {
   background-color: white; }
 
-#mainList {
+#listContainer {
   height: 400px;
   width: 300px;
   background-color: beige; }
+
+#myList {
+  position: relative;
+  padding: 10px;
+  margin: 16px; }
