@@ -2,10 +2,21 @@
 
 $bgcolour: white;
 
+/*default styles */
 body {
 background-color: $bgcolour;	
 }
 
+ul{
+list-style-type: none;
+}
+
+li{
+border: 2px solid rgb(189, 180, 159);
+margin-top: 3px;
+}
+
+/*ID styles*/
 #listContainer{
 height: 400px;
 width: 300px;
@@ -16,5 +27,4 @@ background-color: beige;
 position:relative;
 padding: 10px;
 margin: 16px;
-
 }

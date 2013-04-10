@@ -1,7 +1,16 @@
 /* style.css */
+/*default styles */
 body {
   background-color: white; }
 
+ul {
+  list-style-type: none; }
+
+li {
+  border: 2px solid #bdb49f;
+  margin-top: 3px; }
+
+/*ID styles*/
 #listContainer {
   height: 400px;
   width: 300px;
