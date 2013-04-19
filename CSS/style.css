@@ -12,8 +12,7 @@ li {
 
 /*ID styles*/
 #listContainer {
-  height: 400px;
-  width: 300px;
+  max-width: 400px;
   background-color: beige; }
 
 #myList {
