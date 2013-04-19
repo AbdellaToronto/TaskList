@@ -1,5 +1,9 @@
 /* style.css */
 
+
+body { margin: 0px;
+ }
+
 $bgcolour: white;
 
 /*default styles */
@@ -14,6 +18,7 @@ list-style-type: none;
 li{
 border: 2px solid rgb(189, 180, 159);
 margin-top: 3px;
+border-radius: 4px;
 }
 
 /*ID styles*/
@@ -23,7 +28,27 @@ background-color: beige;
 }
 
 #myList{
-position:relative;
+
 padding: 10px;
 margin: 16px;
+border: 2px solid grey;
+border-radius: 4px;
+margin: auto auto;
+}
+
+#addNew{
+text-align: right;
+}
+
+.hoverStyle{
+background-color: orange;
+font-weight: bold;
+//text-align: right;
+}
+
+.clickStyle{
+font-color: blue;
+//text-align: center;
+border-width: 4px;
+border-color: black;
 }

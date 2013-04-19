@@ -1,4 +1,7 @@
 /* style.css */
+body {
+  margin: 0px; }
+
 /*default styles */
 body {
   background-color: white; }
@@ -8,7 +11,8 @@ ul {
 
 li {
   border: 2px solid #bdb49f;
-  margin-top: 3px; }
+  margin-top: 3px;
+  border-radius: 4px; }
 
 /*ID styles*/
 #listContainer {
@@ -16,6 +20,20 @@ li {
   background-color: beige; }
 
 #myList {
-  position: relative;
   padding: 10px;
-  margin: 16px; }
+  margin: 16px;
+  border: 2px solid grey;
+  border-radius: 4px;
+  margin: auto auto; }
+
+#addNew {
+  text-align: right; }
+
+.hoverStyle {
+  background-color: orange;
+  font-weight: bold; }
+
+.clickStyle {
+  font-color: blue;
+  border-width: 4px;
+  border-color: black; }
