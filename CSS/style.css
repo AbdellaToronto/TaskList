@@ -17,21 +17,23 @@ li {
 /*ID styles*/
 #listContainer {
   max-width: 400px;
-  background-color: beige; }
+  background-color: beige;
+  margin: 100px auto;
+  border: 2px solid grey;
+  border-radius: 4px; }
 
 #myList {
   padding: 10px;
-  margin: 16px;
-  border: 2px solid grey;
-  border-radius: 4px;
-  margin: auto auto; }
+  margin: 16px; }
 
 #addNew {
-  text-align: right; }
+  text-align: right;
+  cursor: default; }
 
 .hoverStyle {
   background-color: orange;
-  font-weight: bold; }
+  font-weight: bold;
+  width: 110%; }
 
 .clickStyle {
   font-color: blue;

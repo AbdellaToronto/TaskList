@@ -5,8 +5,9 @@ var listRows =$('#myList li');
 
 list.sortable();
 
-listRows.hover(hovered,hoveredOff);
-listRows.click(clicked);
+list.on('mouseover','li', hovered);
+list.on('mouseout','li', hoveredOff);
+list.on('click','li',clicked);
 
 
 $('#addNew').click(addNewRow);
@@ -28,7 +29,7 @@ $(this).removeClass('hoverStyle', 300);
 }
 
 function clicked() {
-$(this).toggleClass('clickStyle', 400);
+$(this).toggleClass('clickStyle', 100);
 }
 
 function addNewRow() {

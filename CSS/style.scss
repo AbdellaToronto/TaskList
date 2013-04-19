@@ -25,25 +25,29 @@ border-radius: 4px;
 #listContainer{
 max-width: 400px;
 background-color: beige;
+margin: 100px auto;
+border: 2px solid grey;
+border-radius: 4px;
 }
 
 #myList{
 
 padding: 10px;
 margin: 16px;
-border: 2px solid grey;
-border-radius: 4px;
-margin: auto auto;
+
 }
 
 #addNew{
 text-align: right;
+cursor: default;
 }
 
 .hoverStyle{
 background-color: orange;
 font-weight: bold;
 //text-align: right;
+
+width: 110%;
 }
 
 .clickStyle{
