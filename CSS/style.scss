@@ -1,7 +1,7 @@
 /* style.css */
 
 /*variables*/
-$bgcolour: white;
+$bgcolour: rgb(213, 213, 213);
 $elementsBGColor: rgb(155, 155, 155);
 $listBGColor: rgb(77, 77, 77);
 
@@ -9,7 +9,9 @@ $listBGColor: rgb(77, 77, 77);
 
 
 /*default styles */
-body { margin: 0px;
+body { 
+	margin: 0px;
+	background-color: $bgcolour;
  }
 
 body {

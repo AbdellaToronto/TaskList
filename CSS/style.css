@@ -2,10 +2,11 @@
 /*variables*/
 /*default styles */
 body {
-  margin: 0px; }
+  margin: 0px;
+  background-color: #d5d5d5; }
 
 body {
-  background-color: white; }
+  background-color: #d5d5d5; }
 
 ul {
   list-style-type: none; }

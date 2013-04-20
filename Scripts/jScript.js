@@ -33,7 +33,7 @@ $(document).ready(function() {
 		focusValue = $(this).text();
 		//console.log(focusValue);
 		$(this).html('<input type="text" class="newTaskText" name"newTaskText"></input>');
-		$(this).find('.newTaskText').focus();
+		$(this).find('.newTaskText').val(focusValue).focus();
 	}
 
 	function enterTask() {
