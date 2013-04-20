@@ -3,6 +3,7 @@ $(document).ready(function() {
 	var focusValue = 'default';
 	var list = $('#myList');
 	var listRows = $('#myList li');
+	
 
 
 	//click and hover events, as well as jqUI sortable functionality
@@ -14,7 +15,7 @@ $(document).ready(function() {
 
 	$('#addNew').click(addNewRow); //add new rows if add button is clicked
 
-	enterTask(checkIfTextSelected);
+	enterTask();
 
 
 	
@@ -24,16 +25,24 @@ $(document).ready(function() {
 	function enterTask(checks) {
 		var enterPressed = $(document).keypress(function(e) {
 			if (e.which == 13) {
-				checks();
-				console.log(focusValue);
+				 checkIfTextSelected()
+				console.log(focusValue); //test
+				parseToList();
+
 			}
 		});
 	}
 
 	function checkIfTextSelected() { //checks if cursor is in text area
 		if ($('.newTaskText').is(":focus")) {
-			focusValue = $('.newTaskText:focus').val();
+			focusValue =  $('.newTaskText:focus').val();
 		}
+	}
+
+	function parseToList(){
+		 $('.newTaskText:focus').after(focusValue);
+		 $('.newTaskText:focus').remove();
+
 	}
 
 	function hovered() {
