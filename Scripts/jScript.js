@@ -3,13 +3,7 @@ $(document).ready(function(){
 var list = $('#myList');
 var listRows =$('#myList li');
 
-//checks for keypresses
-var enterPressed = $(document).keypress(function(e) {
-if(e.which == 13) {
-console.log('Yay');
-}
-});
-
+//check for keypresses//
 
 
 list.sortable();
@@ -20,17 +14,29 @@ list.on('click','li',clicked);
 
 $('#addNew').click(addNewRow);
 
-//$('#newTaskText').on('keypress', 'input', enterTask(event));
+enterTask(checkIfTextSelected);
 
 
 
-//functions
-function enterTask(event) {
-console.log('something');
-if(event.which == 13) {
-alert("awesome, that was enter");
+
+//functions//
+function enterTask(checks) {
+
+var enterPressed = $(document).keypress(function(e) {
+if(e.which == 13) {
+console.log(checks);
+
+}
+});
+
+
+
 }
 
+function checkIfTextSelected(){ //checks if cursor is in text area
+if($('.newTaskText').is(":focus")){
+return $('.newTaskText');
+}
 }
 
 function hovered(){
@@ -46,8 +52,8 @@ $(this).toggleClass('clickStyle', 100);
 }
 
 function addNewRow() {
-
-$('#myList li:last').after('<li><input type="text" id="newTaskText" name"newTaskText"></input></li>');
+$('#myList li:last').after('<li><input type="text" class="newTaskText" name"newTaskText"></input></li>');
+$('.newTaskText').focus();
 }
 
 });
