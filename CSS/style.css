@@ -1,8 +1,9 @@
 /* style.css */
+/*variables*/
+/*default styles */
 body {
   margin: 0px; }
 
-/*default styles */
 body {
   background-color: white; }
 
@@ -10,14 +11,14 @@ ul {
   list-style-type: none; }
 
 li {
-  border: 2px solid #bdb49f;
+  border: 2px solid #cccccc;
   margin-top: 3px;
   border-radius: 4px; }
 
 /*ID styles*/
 #listContainer {
   max-width: 400px;
-  background-color: beige;
+  background-color: #4d4d4d;
   margin: 100px auto;
   border: 2px solid grey;
   border-radius: 4px; }
@@ -25,17 +26,22 @@ li {
 #myList {
   padding: 10px;
   margin: 16px; }
+  #myList li {
+    background-color: #9b9b9b; }
 
 #addNew {
-  text-align: right;
-  cursor: default; }
+  text-align: center;
+  cursor: pointer;
+  border-bottom: thin dotted black;
+  background-color: #9b9b9b; }
 
+/*Class styles*/
 .hoverStyle {
-  background-color: orange;
-  font-weight: bold;
+  background-color: #e68217 !important;
   width: 110%; }
 
 .clickStyle {
   font-color: blue;
-  border-width: 4px;
-  border-color: black; }
+  font-weight: bold;
+  border-width: 2px;
+  border-color: #5cd5f3; }

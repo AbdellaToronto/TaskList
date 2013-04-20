@@ -1,12 +1,17 @@
 /* style.css */
 
+/*variables*/
+$bgcolour: white;
+$elementsBGColor: rgb(155, 155, 155);
+$listBGColor: rgb(77, 77, 77);
 
+
+
+
+/*default styles */
 body { margin: 0px;
  }
 
-$bgcolour: white;
-
-/*default styles */
 body {
 background-color: $bgcolour;	
 }
@@ -16,15 +21,17 @@ list-style-type: none;
 }
 
 li{
-border: 2px solid rgb(189, 180, 159);
+border: 2px solid rgb(204, 204, 204);
 margin-top: 3px;
 border-radius: 4px;
 }
 
+
+
 /*ID styles*/
 #listContainer{
 max-width: 400px;
-background-color: beige;
+background-color: $listBGColor;
 margin: 100px auto;
 border: 2px solid grey;
 border-radius: 4px;
@@ -35,22 +42,29 @@ border-radius: 4px;
 padding: 10px;
 margin: 16px;
 
+	li{
+	background-color: $elementsBGColor;
+	}
+
 }
 
 #addNew{
-text-align: right;
-cursor: default;
+text-align: center;
+cursor: pointer;
+border-bottom: thin dotted black;
+background-color: $elementsBGColor;
 }
 
+
+/*Class styles*/
 .hoverStyle{
-background-color: orange;
-font-weight: bold;
+background-color: rgb(230, 130, 23)!important;
 width: 110%;
 }
 
 .clickStyle{
 font-color: blue;
-
-border-width: 4px;
-border-color: black;
+font-weight: bold;
+border-width: 2px;
+border-color: rgb(92, 213, 243);
 }
