@@ -1,6 +1,6 @@
 $(document).ready(function() {
-	//variables
-	var focusValue = 'default';
+	//---------------------Variables----------------------------//
+	var focusValue = null;
 	var list = $('#myList');
 	var listRows = $('#myList li');
 
@@ -14,8 +14,9 @@ $(document).ready(function() {
 
 	$('#addNew').click(addNewRow); //add new rows if add button is clicked
 
-	enterTask();
+	enterTask(); //enters 
 
+	list.on('dblclick','li', editTask); //edit list item on doubleclick
 
 	$(document).keyup(function(e) { //messy delete, refactor later
 		if (e.which == 8 || e.which == 46) {
@@ -25,20 +26,33 @@ $(document).ready(function() {
 	});
 
 
-	//functions//
+	//---------------------------Functions----------------------//
 
-	function enterTask(checks) {
+
+	function editTask() { //edits task on double click
+		focusValue = $(this).text();
+		//console.log(focusValue);
+		$(this).html('<input type="text" class="newTaskText" name"newTaskText"></input>');
+		$(this).find('.newTaskText').focus();
+	}
+
+	function enterTask() {
 		var enterPressed = $(document).keypress(function(e) {
-			if (e.which == 13) {
-				checkIfTextSelected();
-				console.log(focusValue); //test
-				parseToList();
+			checkIfTextSelected(); //checks and sets the value of focused field to focusValue
 
+			if (e.which == 13 && focusValue != '') { //if enter is pressed and value isn't blank
+				//console.log(focusValue); //test
+				parseToList();
+				
+
+			} else if (e.which == 13 && focusValue == '') { //else if the value is blank
+				$('.newTaskText:focus').parent().remove();
+				alert("Don't leave me blank please!");
 			}
 		});
 	}
 
-	function checkIfTextSelected() { //checks if cursor is in text area
+	function checkIfTextSelected() { //checks if cursor is in text area and sets the value of text to focusValue
 		if ($('.newTaskText').is(":focus")) {
 			focusValue = $('.newTaskText:focus').val();
 		}
@@ -47,7 +61,17 @@ $(document).ready(function() {
 	function parseToList() {
 		$('.newTaskText:focus').after(focusValue);
 		$('.newTaskText:focus').remove();
+	}
 
+	function addNewRow() {
+		var rowLength = $('#myList').children().length;
+		if (rowLength > 0) {
+			$('#myList li:last').after('<li><input type="text" class="newTaskText" name"newTaskText"></input></li>');
+			$('.newTaskText').focus();
+		} else {
+			$('#myList').html('<li><input type="text" class="newTaskText" name"newTaskText"></input></li>');
+			$('.newTaskText').focus();
+		}
 	}
 
 	function hovered() {
@@ -60,17 +84,6 @@ $(document).ready(function() {
 
 	function clicked() {
 		$(this).toggleClass('clickStyle', 100);
-	}
-
-	function addNewRow() {
-		var rowLength = $('#myList').children().length;
-		if (rowLength > 0) {
-			$('#myList li:last').after('<li><input type="text" class="newTaskText" name"newTaskText"></input></li>');
-			$('.newTaskText').focus();
-		} else {
-			$('#myList').html('<li><input type="text" class="newTaskText" name"newTaskText"></input></li>');
-			$('.newTaskText').focus();
-		}
 	}
 
 });
