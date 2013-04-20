@@ -1,44 +1,38 @@
 $(document).ready(function() {
-
-
 	//variables
 	var focusValue = 'default';
 	var list = $('#myList');
 	var listRows = $('#myList li');
 
-	//check for keypresses//
 
-
+	//click and hover events, as well as jqUI sortable functionality
 	list.sortable();
 	list.on('mouseover', 'li', hovered);
 	list.on('mouseout', 'li', hoveredOff);
 	list.on('click', 'li', clicked);
 
 
-	$('#addNew').click(addNewRow);
+	$('#addNew').click(addNewRow); //add new rows if add button is clicked
 
 	enterTask(checkIfTextSelected);
 
 
+	
+
+
 	//functions//
-
 	function enterTask(checks) {
-		
-
 		var enterPressed = $(document).keypress(function(e) {
 			if (e.which == 13) {
 				checks();
 				console.log(focusValue);
 			}
 		});
-
-
 	}
 
 	function checkIfTextSelected() { //checks if cursor is in text area
-
 		if ($('.newTaskText').is(":focus")) {
-			focusValue = $('.newTaskText:first').text();
+			focusValue = $('.newTaskText:focus').val();
 		}
 	}
 
