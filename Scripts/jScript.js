@@ -30,7 +30,7 @@ $(document).ready(function() {
 	function enterTask(checks) {
 		var enterPressed = $(document).keypress(function(e) {
 			if (e.which == 13) {
-				checkIfTextSelected()
+				checkIfTextSelected();
 				console.log(focusValue); //test
 				parseToList();
 
@@ -63,8 +63,14 @@ $(document).ready(function() {
 	}
 
 	function addNewRow() {
-		$('#myList li:last').after('<li><input type="text" class="newTaskText" name"newTaskText"></input></li>');
-		$('.newTaskText').focus();
+		var rowLength = $('#myList').children().length;
+		if (rowLength > 0) {
+			$('#myList li:last').after('<li><input type="text" class="newTaskText" name"newTaskText"></input></li>');
+			$('.newTaskText').focus();
+		} else {
+			$('#myList').html('<li><input type="text" class="newTaskText" name"newTaskText"></input></li>');
+			$('.newTaskText').focus();
+		}
 	}
 
 });
