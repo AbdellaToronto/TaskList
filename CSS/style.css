@@ -46,3 +46,10 @@ li {
   font-weight: bold;
   border-width: 2px;
   border-color: #5cd5f3; }
+
+.spriteTest {
+ /* background-image: url(sprite.png);*/
+  width: 250px;
+  height:300px;
+  margin: 0 auto;
+}

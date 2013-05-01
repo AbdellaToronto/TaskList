@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
 	//---------------------Variables----------------------------//
 	var focusValue = null;
 	var list = $('#myList');
@@ -26,9 +26,17 @@ $(document).ready(function() {
 	});
 
 
+//---------------------
+	$(".spriteTest").css('background-image','url(Sprite.png)');
+	$(".spriteTest").animateSprite({
+		columns: 4,
+		totalFrames: 4,
+		duration: 750,
+		loop: true
+	});
+//---------------------
+
 	//---------------------------Functions----------------------//
-
-
 	function editTask() { //edits task on double click
 		focusValue = $(this).text();
 		//console.log(focusValue);
